@@ -1,0 +1,12 @@
+High-symmetry points (in fractional coordinates).
+   0.0000000000   0.0000000000   0.0000000000     GAMMA
+   0.5000000000  -0.5000000000   0.0000000000     X
+   0.6678699800  -0.3326520854   0.0000000000     H_1
+   0.5000000000   0.0000000000   0.0000000000     C
+   0.3321300200   0.3326520854   0.0000000000     H
+   0.0000000000   0.5000000000   0.0000000000     Y
+ 
+ 
+If you use this module, please cite the following work:
+[1] V. Wang, N. Xu, J.-C. Liu, G. Tang, W.-T. Geng, VASPKIT: A User-friendly Interface Facilitating High-throughput Computing and Analysis Using VASP Code, Computer Physics Communications 267, 108033 (2021).
+[2] V. Wang, Y.-Y. Liang, Y. Kawazeo, W.-T. Geng, High-Throughput Computational Screening of Two-Dimensional Semiconductors, arXiv:1806.04285.

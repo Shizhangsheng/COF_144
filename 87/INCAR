@@ -1,0 +1,44 @@
+SYSTEM=Simulation for cell shape& cell volume relaxation with ISIF=2
+
+Startparameter for this run
+ISTART=1   # =1 if WAVECAR exists; =0 else
+ICHARG=11   #charge density: 0-wavefun, if ISTART=0 2 else 0
+#ISPIN=2    #spin:1-off 2-on Default ISPIN=1
+#MAGMOM=
+#NUPDOWN=18.08
+
+Electronic Relaxation 1
+ENCUT=500
+PREC=High  #Normal,Medium,High,Low,Normal(vasp5.X),Accurate
+NELM=200  #Default 60, Number of ELM
+EDIFF=1E-5 #stopping-criterion for ELM, Default 1E-4
+
+Electronic relaxation 2 (details)
+ALGO=48  #Normal(Default),VeryFast,Fast,All,Damped,Diag,(Conjugate,subrot,Eigenval None, Nothing, Exact, from vasp5.2.12)
+LREAL=A    #.FALSE.(Default) or A when atoms are more than 20
+#ADDGRID=.TRUE.
+GGA=PE
+
+Ionic Relaxation
+EDIFFG=-0.01  #stopping-criterion for IOM, Default EDIFFG=EDIFF*10
+NSW=0      #number of stepps for IOM, Default NSW=0
+IBRION=-1      #Default IBRION=-1 for NSW=0 or NSW=1 else 0, 2-conjugate gradient algorithm, for difficult relaxation  
+ISIF=2        #for cell relaxation. 2-static 3-relax cell, Default ISIF=0 if IBRION=0(MD),2 else
+POTIM=0.3     #no default for time step in MD(IBRION=0) and Default with 0.5 for scaling constant in relaxation(IBRION=1,2 or 3)
+
+DOS related values
+ISMEAR=0      #smearing method:-5-tet no less than 2 k-kpoints(High accuracy) -1-fermi  0-gaus  1-MP(Default), Metal ISMEAR=1
+SIGMA=0.01     #for ISMEAR=0 or 1, smearing factor in eV, Default 0.2, Molecule& atom SIGMA=0.01, no settings for ISMEAR=-5
+
+Parallelisation
+#NPAR=8        #=about sqr(number of cores) or =number of cores per node
+# LPLANE=.FALSE.  #=.TRUE. is only recommended if No. of nodes much less than NGX(Y,Z)
+NCORE=8  #NCORE=total number cores/NPAR, available from vasp5.2.13
+
+
+Write Flag
+NWRITE=0    #Default NWRITE=2, for long MD-runs use NWTIRE=0 or 1.for short runs use NWRITE=2
+LWAVE=.FALSE.
+LCHARG=.FALSE.
+
+IVDW=11
